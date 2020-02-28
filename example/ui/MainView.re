@@ -68,13 +68,8 @@ let navButtonActive = navButtonHover @ Style.[marginRight(-4)];
 
 module RightPane = {
   let%component make = () => {
-    let%hook (route, setRoute) = Router.useRoute();
-    let text =
-      switch (route) {
-      | Three({name}) => "Hello " ++ name ++ "!"
-      | One => "Tab One is selected"
-      | Two => "Tab Two is selected"
-      };
+    let%hook (state, _) = GlobalState.useState();
+    let text = "Hello " ++ state.foo ++ state.bar ++ "!";
     <View style=rightPanel> <Text style=textStyle text /> </View>;
   };
 };
@@ -101,12 +96,15 @@ module NavButton = {
 };
 
 let%component make = () => {
-  let%hook (route, setRoute) = Router.useRoute();
+  let%hook (state, dispatch) = GlobalState.useState();
+
   let activeTab =
-    switch (route) {
-    | One => 1
-    | Two => 2
-    | Three(_) => 3
+    if (state.foo == "One") {
+      1;
+    } else if (state.foo == "Two") {
+      2;
+    } else {
+      3;
     };
 
   <View style=outerContainer>
@@ -116,7 +114,7 @@ let%component make = () => {
         title="One"
         onClick={() => {
           Log.debug("Click One");
-          setRoute(One);
+          dispatch(SetFoo("One"));
         }}
       />
       <NavButton
@@ -124,7 +122,8 @@ let%component make = () => {
         title="Two"
         onClick={() => {
           Log.debug("Click Two");
-          setRoute(Two);
+          dispatch(SetFoo("Two"));
+          dispatch(SetBar("Two"));
         }}
       />
       <NavButton
@@ -132,7 +131,7 @@ let%component make = () => {
         title="Three"
         onClick={() => {
           Log.debug("Click Three");
-          setRoute(Three({name: "Foobar"}));
+          dispatch(SetFoo("Three"));
         }}
       />
     </View>

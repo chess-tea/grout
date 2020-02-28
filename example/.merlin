@@ -92,6 +92,7 @@ S /Users/kad/.esy/3_____________________________________________________________
 S /Users/kad/.esy/3_____________________________________________________________________/i/revery_text_wrap-da842f8b/lib/revery-text-wrap
 S /Users/kad/.esy/3_____________________________________________________________________/i/timber-7eadbbc6/lib/timber
 S .
+S data
 S ui
 S ../src
 FLG -ppx '/Users/kad/dev/grout/_build/default/.ppx/66f3189f7a2662210d08323a4a0be66a/ppx.exe --as-ppx'

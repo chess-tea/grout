@@ -1,5 +1,9 @@
 # Grout ✉️ 📬
 
+> WARNING: Right now this doesn't add any additional features over
+[chess-tea/global-state](). Instead of using `Grout` you can use
+`global-state` directly.
+
 Routing for Revery
 
 # Documentation

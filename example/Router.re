@@ -1,4 +1,3 @@
-
 type route =
   | One
   | Two
@@ -7,4 +6,5 @@ type route =
 include Grout.Make({
   type t = route;
   let default = Two;
+  let equals = (==);
 });
