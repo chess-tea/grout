@@ -1,4 +1,0 @@
-#!/bin/sh
-export ESY__NODE_BIN_PATH="/Users/kad/dev/grout/_esy/default/bin"
-exec "/opt/homebrew/bin/node" -r "/Users/kad/dev/grout/_esy/default/pnp.js" "$@"
-              

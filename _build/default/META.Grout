@@ -1,6 +1,0 @@
-description = ""
-requires = "Revery timber"
-archive(byte) = "Grout.cma"
-archive(native) = "Grout.cmxa"
-plugin(byte) = "Grout.cma"
-plugin(native) = "Grout.cmxs"
