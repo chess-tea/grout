@@ -28,33 +28,38 @@ module Make = (Config: Config) => {
     Log.debug("Use Route");
     let%hook (route, updateRoute) = Revery.UI.Hooks.state(getRoute());
     let handler = ref(Some(route => updateRoute(_ => route)));
+
+    // let%hook () =
+    //   Revery.UI.Hooks.effect(Always, () => {
+    //     Some(() => Private.addHandler(handler))
+    //   });
+
+    // There is a bug where the handler might get removed and if the render
+    // function is opimtized away because the route update didn't cause the
+    // view to change, then the handler does not get added again.
+    //
+    // Clicking on the same tab twice demonstrates this behavior.
     Private.addHandler(handler);
+
     let setRoute = route => {
       Log.debug("Set Route");
+
       Private.activeRoute.contents = route;
       List.iter(
         handler =>
           switch (handler.contents) {
-          | Some(handler) => handler(route)
+          | Some(handlerInner) =>
+            Log.debug("Calling handler");
+            handlerInner(route);
+            // We used our handler. Get rid of it!
+            handler.contents = None;
           | None => ()
           },
         Private.handlers.contents,
       );
+
       ();
     };
-
-    let%hook () =
-      Revery.UI.Hooks.effect(
-        OnMount,
-        () => {
-          let dispose = () => {
-            Log.debug("Dispose handler");
-            handler.contents = None;
-          };
-          Some(dispose);
-        },
-      );
-
     (route, setRoute);
   };
 };

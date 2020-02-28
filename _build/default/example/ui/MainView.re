@@ -66,6 +66,19 @@ let navButtonHover =
 
 let navButtonActive = navButtonHover @ Style.[marginRight(-4)];
 
+module RightPane = {
+  let%component make = () => {
+    let%hook (route, setRoute) = Router.useRoute();
+    let text =
+      switch (route) {
+      | Three({name}) => "Hello " ++ name ++ "!"
+      | One => "Tab One is selected"
+      | Two => "Tab Two is selected"
+      };
+    <View style=rightPanel> <Text style=textStyle text /> </View>;
+  };
+};
+
 module NavButton = {
   let%component make = (~active=false, ~title, ~onClick, ()) => {
     let%hook (hover, setHover) = Hooks.state(false);
@@ -112,18 +125,18 @@ let%component make = () => {
         onClick={() => {
           Log.debug("Click Two");
           setRoute(Two);
-          }}
+        }}
       />
       <NavButton
         active={activeTab === 3}
         title="Three"
         onClick={() => {
           Log.debug("Click Three");
-          setRoute(Three({name: "Foobar"}))
+          setRoute(Three({name: "Foobar"}));
         }}
       />
     </View>
-    <View style=rightPanel> <Text style=textStyle text="Right!" /> </View>
+    <RightPane />
   </View>;
   //
 };
