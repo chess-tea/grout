@@ -13,6 +13,7 @@ We don't have docs yet. Hah, take that person exploring this library.
 - `esy` - Builds and installs
 - `esy format` - Runs refmt on all source code
 - `esy test` - Runs Rely tests
+- `esy run` - Runs the example
 
 ## Directory setup
 
