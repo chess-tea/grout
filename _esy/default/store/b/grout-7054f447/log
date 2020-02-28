@@ -1,0 +1,5 @@
+# /Users/kad/.esy/3_____________________________________________________________________/i/opam__s__dune-opam__c__1.11.4-52ef1fcc/bin/dune build --profile=release
+# OCAMLPARAM: unset
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /tmp/dunea101d0.output 2> /dev/null
+$ /Users/kad/.esy/3_____________________________________________________________________/i/opam__s__ocamlfind-opam__c__1.8.1-cbae71df/bin/ocamlfind printconf path > /tmp/dune9f386b.output
+$ /Users/kad/.esy/3_____________________________________________________________________/i/ocaml-4.8.1000-426898cd/bin/ocamlc.opt -config > /tmp/dune1f7803.output

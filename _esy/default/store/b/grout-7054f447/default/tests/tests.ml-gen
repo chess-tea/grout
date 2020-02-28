@@ -1,0 +1,5 @@
+(** @canonical Tests.Grout_test *)
+module Grout_test = Tests__Grout_test
+
+(** @canonical Tests.TestFramework *)
+module TestFramework = Tests__TestFramework

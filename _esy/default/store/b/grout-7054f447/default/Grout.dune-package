@@ -1,0 +1,13 @@
+(lang dune 1.11)
+(name Grout)
+(library
+ (name Grout)
+ (kind normal)
+ (orig_src_dir /Users/kad/dev/grout/src)
+ (archives (byte Grout.cma) (native Grout.cmxa))
+ (plugins (byte Grout.cma) (native Grout.cmxs))
+ (foreign_archives (native Grout.a))
+ (main_module_name Grout)
+ (modes byte native)
+ (modules
+  (singleton (name Grout) (obj_name Grout) (visibility public) (impl))))

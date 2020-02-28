@@ -1,0 +1,6 @@
+(library
+  (public_name Grout)
+  (name Grout)
+  (libraries)
+)
+(include_subdirs unqualified)
