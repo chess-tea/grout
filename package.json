@@ -20,11 +20,12 @@
     "test": "esy x TestExe --onlyPrintDetailsForFailedSuites"
   },
   "dependencies": {
-    "@brisk/brisk-reconciler": "github:briskml/brisk-reconciler#0a2e476",
+    "@brisk/brisk-reconciler": "briskml/brisk-reconciler#0a2e476",
     "@esy-ocaml/reason": "^3.4.0",
     "@reason-native/rely": "^3.1.0",
     "revery": "revery-ui/revery#5438851",
-    "timber": "*"
+    "timber": "*",
+    "@chess-tea/global-state": "chess-tea/global-state#de2f26f"
   },
   "resolutions": {
     "@esy-ocaml/libffi": "esy-ocaml/libffi#c61127d",

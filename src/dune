@@ -4,6 +4,7 @@
   (libraries
     Revery
     timber
+    global-state
   )
   (preprocess (pps brisk-reconciler.ppx))
 )
