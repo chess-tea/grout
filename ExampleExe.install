@@ -1,0 +1,13 @@
+lib: [
+  "_build/install/default/lib/ExampleExe/META"
+  "_build/install/default/lib/ExampleExe/dune-package"
+  "_build/install/default/lib/ExampleExe/opam"
+]
+bin: [
+  "_build/install/default/bin/ExampleExe"
+  "_build/install/default/bin/Roboto-Regular.ttf"
+]
+doc: [
+  "_build/install/default/doc/ExampleExe/LICENSE"
+  "_build/install/default/doc/ExampleExe/README.md"
+]

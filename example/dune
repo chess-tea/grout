@@ -1,0 +1,13 @@
+(executable
+  (package ExampleExe)
+  (name ExampleExe)
+  (public_name ExampleExe)
+  (libraries
+    Grout
+    Revery
+    timber
+  )
+  (preprocess (pps brisk-reconciler.ppx))
+)
+
+(include_subdirs unqualified)

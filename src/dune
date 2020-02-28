@@ -1,6 +1,10 @@
 (library
   (public_name Grout)
   (name Grout)
-  (libraries)
+  (libraries
+    Revery
+    timber
+  )
+  (preprocess (pps brisk-reconciler.ppx))
 )
 (include_subdirs unqualified)

@@ -4,21 +4,37 @@
   "description": "Routing designed for Revery",
   "license": "MIT",
   "esy": {
-    "build": "dune build --profile=release",
+    "build": "refmterr dune build --profile=release",
+    "buildsInSource": "_build",
+    "buildEnv": {
+      "ODOC_SYNTAX": "re"
+    },
     "install": [
-      "esy-installer grout.install"
+      "esy-installer Grout.install",
+      "esy-installer ExampleExe.install"
     ]
-  },
-  "dependencies": {
-    "@opam/dune": "^1.11.4",
-    "@reason-native/rely": "^3.1.0"
   },
   "scripts": {
     "format": "./scripts/format",
+    "run": "esy x ExampleExe",
     "test": "esy x TestExe --onlyPrintDetailsForFailedSuites"
   },
+  "dependencies": {
+    "@brisk/brisk-reconciler": "github:briskml/brisk-reconciler#0a2e476",
+    "@esy-ocaml/reason": "^3.4.0",
+    "@reason-native/rely": "^3.1.0",
+    "revery": "revery-ui/revery#5438851",
+    "timber": "*"
+  },
+  "resolutions": {
+    "@esy-ocaml/libffi": "esy-ocaml/libffi#c61127d",
+    "@opam/cmdliner": "1.0.2",
+    "esy-cmake": "prometheansacrifice/esy-cmake#2a47392def755",
+    "timber": "glennsl/timber#ae065bb"
+  },
   "devDependencies": {
-    "ocaml": "~4.08.0",
-    "@opam/merlin": "*"
+    "ocaml": "~4.8",
+    "@opam/merlin": "^3.3.2",
+    "@opam/dune": "^1.8.0"
   }
 }

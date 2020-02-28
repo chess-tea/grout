@@ -8,6 +8,7 @@
   (modules :standard \ TestExe)
 )
 (executable
+  (package Grout)
   (name TestExe)
   (public_name TestExe)
   (libraries Tests)
