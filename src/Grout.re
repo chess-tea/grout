@@ -1,4 +1,4 @@
-module Log = (val Timber.Log.withNamespace("Grout"));
+module Log = (val Revery.Log.withNamespace("Grout"));
 
 module type Config = {
   type t;

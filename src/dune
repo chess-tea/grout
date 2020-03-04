@@ -1,9 +1,8 @@
 (library
-  (public_name Grout)
+  (public_name grout)
   (name Grout)
   (libraries
     Revery
-    timber
     global-state
   )
   (preprocess (pps brisk-reconciler.ppx))

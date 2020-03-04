@@ -4,38 +4,42 @@
   "description": "Routing designed for Revery",
   "license": "MIT",
   "esy": {
-    "build": "refmterr dune build --profile=release",
-    "buildsInSource": "_build",
+    "build": "dune build -p #{self.name}",
+    "buildDev": [
+      "refmterr dune build ./example/ExampleExe.exe",
+      "refmterr dune build ./tests/TestExe.exe"
+    ],
     "buildEnv": {
       "ODOC_SYNTAX": "re"
     },
     "install": [
-      "esy-installer Grout.install",
-      "esy-installer ExampleExe.install"
+      "esy-installer grout.install"
     ]
   },
   "scripts": {
     "format": "./scripts/format",
-    "run": "esy x ExampleExe",
-    "test": "esy x TestExe --onlyPrintDetailsForFailedSuites"
+    "test": "esy #{self.target_dir}/default/tests/TestExe.exe --onlyPrintDetailsForFailedSuites",
+    "run": "esy #{self.target_dir}/default/example/ExampleExe.exe"
   },
   "dependencies": {
-    "@brisk/brisk-reconciler": "briskml/brisk-reconciler#0a2e476",
-    "@esy-ocaml/reason": "^3.4.0",
-    "@reason-native/rely": "^3.1.0",
     "revery": "revery-ui/revery#5438851",
-    "timber": "*",
-    "@chess-tea/global-state": "chess-tea/global-state#de2f26f"
+    "@brisk/brisk-reconciler": "briskml/brisk-reconciler#0a2e476",
+    "@chess-tea/global-state": "chess-tea/global-state#de2f26f",
+    "ocaml": "^4.08.0",
+    "@opam/dune": "^1.11.4",
+    "@esy-ocaml/reason": "< 4.0.0"
+  },
+  "devDependencies": {
+    "@reason-native/rely": "^3.1.0",
+    "@opam/merlin": "*",
+    "@opam/dune": "^1.8.0",
+    "ocaml": "<= 4.08.0",
+    "refmterr": "*"
   },
   "resolutions": {
     "@esy-ocaml/libffi": "esy-ocaml/libffi#c61127d",
     "@opam/cmdliner": "1.0.2",
     "esy-cmake": "prometheansacrifice/esy-cmake#2a47392def755",
     "timber": "glennsl/timber#ae065bb"
-  },
-  "devDependencies": {
-    "ocaml": "~4.8",
-    "@opam/merlin": "^3.3.2",
-    "@opam/dune": "^1.8.0"
   }
 }

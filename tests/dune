@@ -1,16 +1,15 @@
 (library
   (name Tests)
-  (ocamlopt_flags -linkall -g)
+  (ocamlopt_flags -linkall -g -w -9-27)
+  (ocamlc_flags -w -9-27)
   (libraries
-    Grout
+    grout
     rely.lib
   )
   (modules :standard \ TestExe)
 )
 (executable
-  (package Grout)
   (name TestExe)
-  (public_name TestExe)
   (libraries Tests)
   (modules TestExe)
 )
