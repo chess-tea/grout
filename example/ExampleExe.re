@@ -1,5 +1,3 @@
-open Revery;
-
 let run = () => {
   let init = app => {
     Timber.App.enable();

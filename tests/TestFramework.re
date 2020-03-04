@@ -8,6 +8,7 @@ let projectDir =
     |> dirname
     |> dirname
     |> dirname
+    |> dirname
   );
 
 include Rely.Make({

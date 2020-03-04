@@ -1,6 +1,5 @@
 (install
   (section bin)
-  (package ExampleExe)
   (files
     Roboto-Regular.ttf
   )

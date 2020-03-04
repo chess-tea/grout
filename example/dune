@@ -1,7 +1,9 @@
 (executable
   (name ExampleExe)
+  (ocamlopt_flags -w -9-27)
+  (ocamlc_flags -w -9-27)
   (libraries
-    Grout
+    grout
     Revery
     timber
   )

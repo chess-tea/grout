@@ -11,10 +11,7 @@
     ],
     "buildEnv": {
       "ODOC_SYNTAX": "re"
-    },
-    "install": [
-      "esy-installer grout.install"
-    ]
+    }
   },
   "scripts": {
     "format": "./scripts/format",
@@ -22,11 +19,11 @@
     "run": "esy #{self.target_dir}/default/example/ExampleExe.exe"
   },
   "dependencies": {
-    "revery": "revery-ui/revery#5438851",
-    "@brisk/brisk-reconciler": "briskml/brisk-reconciler#0a2e476",
-    "@chess-tea/global-state": "chess-tea/global-state#de2f26f",
+    "revery": "^0.29.0",
+    "@brisk/brisk-reconciler": "*",
+    "@chess-tea/global-state": "^0.1.0",
     "ocaml": "^4.08.0",
-    "@opam/dune": "^1.11.4",
+    "@opam/dune": "^1.8.0",
     "@esy-ocaml/reason": "< 4.0.0"
   },
   "devDependencies": {
@@ -34,12 +31,15 @@
     "@opam/merlin": "*",
     "@opam/dune": "^1.8.0",
     "ocaml": "<= 4.08.0",
-    "refmterr": "*"
+    "refmterr": "*",
+    "@glennsl/timber": "*"
   },
   "resolutions": {
     "@esy-ocaml/libffi": "esy-ocaml/libffi#c61127d",
-    "@opam/cmdliner": "1.0.2",
     "esy-cmake": "prometheansacrifice/esy-cmake#2a47392def755",
-    "timber": "glennsl/timber#ae065bb"
+    "@opam/cmdliner": "1.0.2",
+    "@brisk/brisk-reconciler": "briskml/brisk-reconciler#34e5991",
+    "revery": "revery-ui/revery#431d925",
+    "@chess-tea/global-state": "chess-tea/global-state#00a6e69"
   }
 }
