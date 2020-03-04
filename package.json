@@ -1,6 +1,6 @@
 {
   "name": "grout",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Routing designed for Revery",
   "license": "MIT",
   "esy": {
